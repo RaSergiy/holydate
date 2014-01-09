@@ -316,7 +316,7 @@ class AncientCalendar:
         """Get holidays and saints names for day."""
 
         self.out = ''
-        self.out += menology[self.month][self.day]['first_saint']
+        self.out += menology[self.month][self.day]['first_saint'].strip()
         try:
             self.out += menology[self.month][self.day]['second_saint']
             self.out += menology[self.month][self.day]['oldbeliever_saint']
