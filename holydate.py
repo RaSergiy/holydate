@@ -979,20 +979,61 @@ class AncientCalendar:
 
 if __name__ == "__main__":
 
-    import datetime
+    import sys
     import textwrap
+    import argparse
+    from datetime import datetime
+    from search_saints import search_saints
 
-    #Grigorian date today.
-    gr_day = datetime.date.today().day
-    gr_month = datetime.date.today().month
-    gr_year = datetime.date.today().year
+    #TODO: сделать проверку диапазона даты.
+    def isodate(string):
+        """Add new argparse type. Check date format."""
+        try:
+            return datetime.strptime(string, '%d-%m-%Y').date()
+        except ValueError:
+            msg = u'date input must in the format of dd-mm-yyyy'
+            raise argparse.ArgumentTypeError(msg)
 
-    cal = AncientCalendar(gr_day, gr_month, gr_year)
-    print cal.getGrigorianDate(verbose='on')
-    print cal.getJulianDate(verbose='on')
-    print cal.getWeekday(verbose='on')
-    print cal.getTone()
-    print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=130), '\n'
-    print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=130)
-    print cal.getFast()
-    print cal.getBow()
+    parser = argparse.ArgumentParser(description='Holydate -- ancient orthodox calendar.')
+    parser.add_argument('-d', '--date', dest='date', action='store', type=isodate,
+                        help='display a calendar for grigorian date input dd-mm-yyyy')
+    parser.add_argument('-t', '--today', dest='today', action='store_true',
+                        help='display a calendar for grigorian date today')
+    parser.add_argument('-s', '--search', dest='string', action='store', type=str,
+                        help='search saints and holidays in orthodoxy Menology')
+
+    parser.add_argument('-v', '--version', action='version', version='Holydate version is 0.1')
+
+    results = parser.parse_args()
+
+    if len(sys.argv) == 1:
+        parser.print_help()
+    elif results.today:
+        gr_day = datetime.today().day
+        gr_month = datetime.today().month
+        gr_year = datetime.today().year
+        cal = AncientCalendar(gr_day, gr_month, gr_year)
+        print cal.getGrigorianDate(verbose='on')
+        print cal.getJulianDate(verbose='on')
+        print cal.getWeekday(verbose='on')
+        print cal.getTone()
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=130), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=130)
+        print cal.getFast()
+        print cal.getBow()
+    elif results.date:
+        gr_year = int(str(results.date)[:4])
+        gr_month = int(str(results.date)[5:7])
+        gr_day = int(str(results.date)[8:11])
+        cal = AncientCalendar(gr_day, gr_month, gr_year)
+        print cal.getGrigorianDate(verbose='on')
+        print cal.getJulianDate(verbose='on')
+        print cal.getWeekday(verbose='on')
+        print cal.getTone()
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=150), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=150)
+        print cal.getFast()
+        print cal.getBow()
+    elif results.string:
+        print '\n' + search_saints(results.string)
+
