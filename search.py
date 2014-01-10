@@ -9,7 +9,7 @@
 import re
 import datetime
 from menology import menology
-from holidate_func import ju_to_gr_in_search
+from holydate_func import ju_to_gr_in_search
 
 month_word = {
     1: 'января',
