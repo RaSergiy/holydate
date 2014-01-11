@@ -55,12 +55,12 @@ def search_saints(search_string):
         return 'Ваш запрос — «{}» не найден!'.decode('utf8').format(search_string)
     else:
         for item in out:
-            string_out += textwrap.fill(str(item[0][0]).lstrip(), initial_indent=' ') \
-                + ' ' + item[0][1] + ' по н. ст.' + '\n' + \
-                textwrap.fill(str(item[1][0]), initial_indent=' ') \
-                + ' ' + item[1][1] + ' по ст. ст.' + '\n' + \
+            string_out += textwrap.fill(str(item[0][0]).lstrip(), initial_indent='  ') \
+                + '  ' + item[0][1] + ' по н. ст.' + '\n' + \
+                textwrap.fill(str(item[1][0]), initial_indent='  ') \
+                + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
                 textwrap.fill(item[2][0].format(red='\033[31m', end='\033[0m').lstrip(),
-                              width=100, initial_indent=' ', subsequent_indent=' ') + '\n\n'
+                              width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
         return string_out
 
 if __name__ == "__main__":

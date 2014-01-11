@@ -994,14 +994,14 @@ if __name__ == "__main__":
             msg = u'date input must in the format of dd-mm-yyyy'
             raise argparse.ArgumentTypeError(msg)
 
-    parser = argparse.ArgumentParser(description='Holydate -- ancient orthodox calendar.')
+    parser = argparse.ArgumentParser(description='Holydate, 0.1  ancient orthodox calendar.',
+                                     epilog='Report bugs and wishes to <vechnoe.info@gmail.com>')
     parser.add_argument('-d', '--date', dest='date', action='store', type=isodate,
                         help='display a calendar for grigorian date input dd-mm-yyyy')
     parser.add_argument('-t', '--today', dest='today', action='store_true',
                         help='display a calendar for grigorian date today')
-    parser.add_argument('-s', '--search', dest='string', action='store', type=str,
+    parser.add_argument('-s', '--search', dest='str', action='store', type=str,
                         help='search saints and holidays in orthodoxy Menology')
-
     parser.add_argument('-v', '--version', action='version', version='Holydate version is 0.1')
 
     results = parser.parse_args()
@@ -1013,27 +1013,33 @@ if __name__ == "__main__":
         gr_month = datetime.today().month
         gr_year = datetime.today().year
         cal = AncientCalendar(gr_day, gr_month, gr_year)
-        print cal.getGrigorianDate(verbose='on')
-        print cal.getJulianDate(verbose='on')
-        print cal.getWeekday(verbose='on')
-        print cal.getTone()
-        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=130), '\n'
-        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=130)
-        print cal.getFast()
-        print cal.getBow()
+        print '\n'
+        print textwrap.fill(cal.getGrigorianDate(verbose='on'), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getJulianDate(verbose='on'), initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=100,
+                            initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
+                            initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getBow(), initial_indent='  ', subsequent_indent='  '), '\n\n'
     elif results.date:
         gr_year = int(str(results.date)[:4])
         gr_month = int(str(results.date)[5:7])
         gr_day = int(str(results.date)[8:11])
         cal = AncientCalendar(gr_day, gr_month, gr_year)
-        print cal.getGrigorianDate(verbose='on')
-        print cal.getJulianDate(verbose='on')
-        print cal.getWeekday(verbose='on')
-        print cal.getTone()
-        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=150), '\n'
-        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=150)
-        print cal.getFast()
-        print cal.getBow()
-    elif results.string:
-        print '\n' + search_saints(results.string)
+        print '\n'
+        print textwrap.fill(cal.getGrigorianDate(verbose='on'), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getJulianDate(verbose='on'), initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=100,
+                            initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
+                            initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
+        print textwrap.fill(cal.getBow(), initial_indent='  ', subsequent_indent='  '), '\n\n'
+    elif results.str:
+        print '\n' + search_saints(results.str)
 
