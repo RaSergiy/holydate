@@ -318,8 +318,11 @@ class AncientCalendar:
         self.out = ''
         self.out += menology[self.month][self.day]['first_saint'].strip()
         try:
-            self.out += menology[self.month][self.day]['second_saint']
-            self.out += menology[self.month][self.day]['oldbeliever_saint']
+            try:
+                self.out += menology[self.month][self.day]['second_saint']
+                self.out += menology[self.month][self.day]['oldbeliever_saint'].lstrip()
+            except KeyError:
+                self.out += menology[self.month][self.day]['oldbeliever_saint'].lstrip()
         except KeyError:
             pass
         return self.out
@@ -950,7 +953,6 @@ class AncientCalendar:
         else:
             return 'Error. Value of verbose must be [on|off].'
 
-
     def getGrigorianDate(self, verbose='on'):
         """Get grigorian calendar date."""
 
@@ -1023,7 +1025,7 @@ if __name__ == "__main__":
         print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
                             initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
-        print textwrap.fill(cal.getBow(), initial_indent='  ', subsequent_indent='  '), '\n\n'
+        print textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  '), '\n\n'
     elif results.date:
         gr_year = int(str(results.date)[:4])
         gr_month = int(str(results.date)[5:7])
@@ -1039,7 +1041,7 @@ if __name__ == "__main__":
         print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
                             initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
-        print textwrap.fill(cal.getBow(), initial_indent='  ', subsequent_indent='  '), '\n\n'
+        print textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  '), '\n\n'
     elif results.str:
         print '\n' + search_saints(results.str)
 
