@@ -79,50 +79,51 @@ class AncientCalendar:
 
         #Переходящие праздники.
         if self.difference_between_days in [-70]:
-            self.weekdayname = '{red}Неделя о Мытаре и Фарисее. Начало Триоди постной.{end}'
+            self.weekdayname = '{red}Неделя о Мытаре и Фарисее. Начало Триоди постной.{endred}'
         elif self.difference_between_days in range(-69, -63):
             self.weekdayname = 'Cедмица о Мытаре и Фарисее.'
         elif self.difference_between_days in [-63]:
-            self.weekdayname = '{red}Неделя о Блудном сыне.{end}'
+            self.weekdayname = '{red}Неделя о Блудном сыне.{endred}'
         elif self.difference_between_days in range(-62, -57):
             self.weekdayname = 'Седмица Мясопустная.'
         elif self.difference_between_days in [-57]:
-            self.weekdayname = 'Суббота Мясопустная. Вселенское поминание усопших.'
+            self.weekdayname = '{bold}Суббота Мясопустная. Вселенское поминание усопших.{endbold}'
         elif self.difference_between_days in [-56]:
-            self.weekdayname = '{red}Неделя Мясопустная. Воспоминание Страшного суда.{end}'
+            self.weekdayname = '{red}Неделя Мясопустная. Воспоминание Страшного суда.{endred}'
         elif self.difference_between_days in range(-55, -50):
             self.weekdayname = 'Седмица Cыропустная.'
         elif self.difference_between_days in [-50]:
-            self.weekdayname = '{red}Суббота Cыропустная. Память всех преподобных мужей и жен (Сл.).{end}'
+            self.weekdayname = '{red}Суббота Cыропустная. Память всех преподобных мужей и жен (Сл.).{endred}'
         elif self.difference_between_days in [-49]:
             self.weekdayname = ('{red}Неделя сыропустная. Воспоминание изгнания '
-                                'Адама и Еввы из рая.{end}')
+                                'Адама и Еввы из рая.{endred}')
         elif self.difference_between_days in range(-48, -43):
             self.weekdayname = 'Первая седмица Великого поста.'
         elif self.difference_between_days in [-43]:
             self.weekdayname = 'Суббота Феодора Тирона.'
         elif self.difference_between_days in [-42]:
-            self.weekdayname = '{red}Первая неделя Великого поста. Неделя Православия.{end}'
-        elif self.difference_between_days in range(-41, -34):
+            self.weekdayname = '{red}Первая неделя Великого поста. Неделя Православия.{endred}'
+        elif self.difference_between_days in range(-41, -36):
             self.weekdayname = 'Вторая седмица Великого поста.'
-        elif self.difference_between_days in [-34]:
-            self.weekdayname = 'Вторая суббота Великого поста. Поминание усопших.'
+        elif self.difference_between_days in [-36]:
+            self.weekdayname = '{bold}Вторая суббота Великого поста. Поминание усопших.{endbold}'
         elif self.difference_between_days in [-35]:
             self.weekdayname = ('{red}Вторая неделя Великого поста. По уставу Успенского собора '
                                 'Московского Кремля совершается служба Федоровской '
-                                'иконе пресв. Богородицы.{end}')
+                                'иконе пресв. Богородицы.{endred}')
         elif self.difference_between_days in range(-34, -29):
             self.weekdayname = 'Третья седмица Великого поста.'
         elif self.difference_between_days in [-29]:
-            self.weekdayname = 'Третья суббота Великого поста. Поминание усопших.'
+            self.weekdayname = '{bold}Третья суббота Великого поста. Поминание усопших.{endbold}'
         elif self.difference_between_days in [-28]:
-            self.weekdayname = '{red}Третья неделя Великого поста. Поклонение Честному Кресту.{end}'
+            self.weekdayname = '{red}Третья неделя Великого поста. Поклонение Честному Кресту.{endred}'
         elif self.difference_between_days in range(-27, -22):
             self.weekdayname = 'Четвертая седмица Великого поста.'
+        #TODO: если преподает полиелиос, то заупокой не служим.
         elif self.difference_between_days in [-22]:
-            self.weekdayname = 'Третья суббота Великого поста. Поминание усопших.'
+            self.weekdayname = '{bold}Четвертая суббота Великого поста. Поминание усопших.{endbold}'
         elif self.difference_between_days in [-21]:
-            self.weekdayname = '{red}Четвертая неделя Великого поста. Иоанна Лествичника.{end}'
+            self.weekdayname = '{red}Четвертая неделя Великого поста. Иоанна Лествичника.{endred}'
         elif self.difference_between_days in range(-20, -15):
         #Марьино стояние меняется с Благовещением.
             if self.weekday in [2] and self.day in [23] and self.month in [3]:
@@ -138,16 +139,16 @@ class AncientCalendar:
                                     'Совершается служба Марьино стояние.')
         elif self.difference_between_days in [-15]:
                 self.weekdayname = ('{red}Пятая суббота Великого поста.  '
-                                    'Служба Акафиста пресв. Богородицы (Сл.).{end}')
+                                    'Служба Акафиста пресв. Богородицы (Сл.).{endred}')
         elif self.difference_between_days in [-14]:
-            self.weekdayname = '{red}Пятая неделя Великого поста. Преп. Марьи Египетской.{end}'
+            self.weekdayname = '{red}Пятая неделя Великого поста. Преп. Марьи Египетской.{endred}'
         elif self.difference_between_days in range(-13, -8):
             self.weekdayname = 'Шестая седмица Великого поста.'
         elif self.difference_between_days in [-8]:
             self.weekdayname = ('{red}Воскрешение праведного Лазаря. Лазарева суббота (Сл.).  '
-                                'Начало Триоди Цветной.{end}')
+                                'Начало Триоди Цветной.{endred}')
         elif self.difference_between_days in [-7]:
-            self.weekdayname = '{red}⊕ Вход Господень во Иерослаим. Неделя Ваий.{end}'
+            self.weekdayname = '{red}⊕ Вход Господень во Иерослаим. Неделя Ваий.{endred}'
         elif self.difference_between_days in [-6]:
             self.weekdayname = 'Начало Страстей Господних. Великий понедельник.'
         elif self.difference_between_days in [-5]:
@@ -155,7 +156,7 @@ class AncientCalendar:
         elif self.difference_between_days in [-4]:
             self.weekdayname = 'Великая среда.'
         elif self.difference_between_days in [-3]:
-            self.weekdayname = '{red}Великий четверг. Воспоминание Тайной вечери.{end}'
+            self.weekdayname = '{red}Великий четверг. Воспоминание Тайной вечери.{endred}'
         elif self.difference_between_days in [-2]:
             self.weekdayname = 'Великий пяток.'
         elif self.difference_between_days in [-1]:
@@ -165,39 +166,38 @@ class AncientCalendar:
         elif self.difference_between_days in range(1, 7):
             if self.weekday in [2]:
                 self.weekdayname = ('{red}☩ Во вторник Светлой седмицы празднуем праздник  '
-                                    'Одигитрии пресв. Богородицы.{end}')
+                                    'Одигитрии пресв. Богородицы.{endred}')
             else:
-                self.weekdayname = '{red}Светлая седмица.{end}'
+                self.weekdayname = '{red}Светлая седмица.{endred}'
         elif self.difference_between_days in [7]:
-            self.weekdayname = '{red}Неделя о Фоме. Антипасха.{end}'
+            self.weekdayname = '{red}Неделя о Фоме. Антипасха.{endred}'
         elif self.difference_between_days in range(8, 14):
             if self.day in [9]:
                 #TODO: Переписать, т. к. Радоница переносится,
                 #если припадает в этот день Георгий Победоносец.
-                self.weekdayname = ('Радоница. Во вторник второй седмицы по Пасхе '
-                                    'совершаем поминовение усопших')
+                self.weekdayname = ('{bold}Радоница. Во вторник второй седмицы по Пасхе '
+                                    'совершаем поминовение усопших{endbold}')
             else:
                 self.weekdayname = 'Седмица вторая по Пасхе о Фоме.'
         elif self.difference_between_days in [14]:
             self.weekdayname = ('{red}Неделя третья по Пасхе свв. Жен Мироносиц  '
-                                'и Иосифа Праведного.{end}')
+                                'и Иосифа Праведного.{endred}')
         elif self.difference_between_days in range(15, 21):
             self.weekdayname = 'Седмица третья по Пасхе'
         elif self.difference_between_days in [21]:
-            self.weekdayname = '{red}Неделя о Расслабленном.{end}'
+            self.weekdayname = '{red}Неделя о Расслабленном.{endred}'
         elif self.difference_between_days in range(22, 24):
             self.weekdayname = 'Седмица четвертая по Пасхе.'
         elif self.difference_between_days in [24]:
-            self.weekdayname = '{red}Преполовение Пятидесятницы (Сл.).{end}'
+            self.weekdayname = '{red}Преполовение Пятидесятницы (Сл.).{endred}'
         elif self.difference_between_days in range(25, 28):
             self.weekdayname = 'Седмица четвертая по Пасхе. Попраздненство Преполовения'
         elif self.difference_between_days in [28]:
-            self.weekdayname = '{red}Неделя о Самаряныни.{end}'
+            self.weekdayname = '{red}Неделя о Самаряныни.{endred}'
         elif self.difference_between_days in range(29, 31):
             self.weekdayname = 'Седмица пятая по Пасхе. Попраздненство Преполовения.'
         elif self.difference_between_days in [31]:
-            #TODO:Найти чин службы.
-            self.weekdayname = '{red}Отдание празника Преполовения.{end}'
+            self.weekdayname = '{red}Отдание празника Преполовения (Сл.).{endred}'
         elif self.difference_between_days in range(32, 35):
             self.weekdayname = 'Седмица пятая по Пасхе.'
         elif self.difference_between_days in [35]:
@@ -205,43 +205,43 @@ class AncientCalendar:
         elif self.difference_between_days in range(36, 38):
             self.weekdayname = 'Седмица шестая по Пасхе'
         elif self.difference_between_days in [38]:
-            self.weekdayname = '{red}Отдание Пасхи (Сл.).{end}'
+            self.weekdayname = '{red}Отдание Пасхи (Сл.).{endred}'
         elif self.difference_between_days in [39]:
-            self.weekdayname = '{red}⊕ Вознесение Господне.{end}'
+            self.weekdayname = '{red}⊕ Вознесение Господне.{endred}'
         elif self.difference_between_days in range(40, 42):
             self.weekdayname = 'Попраздненство Вознесения. Седмица шестая по Пасхе.'
         elif self.difference_between_days in [42]:
-            self.weekdayname = '{red}Неделя свв. Отцов первого Вселенского собора.{end}'
+            self.weekdayname = '{red}Неделя свв. Отцов первого Вселенского собора.{endred}'
         elif self.difference_between_days in range(43, 46):
             self.weekdayname = 'Попраздненство Вознесения. Седмица седьмая по Пасхе.'
         elif self.difference_between_days in [46]:
-            self.weekdayname = '{red}Отдание праздника Вознесения (Сл.).{end}'
+            self.weekdayname = '{red}Отдание праздника Вознесения (Сл.).{endred}'
         elif self.difference_between_days in [47]:
             self.weekdayname = 'Седмица седьмая по Пасхе.'
         elif self.difference_between_days in [48]:
-            self.weekdayname = ('В субботу седьмую по Пасхе совершаем память '
+            self.weekdayname = ('{bold}В субботу седьмую по Пасхе совершаем память '
                                 'всем успопшим от века во Христа верующим '
-                                'отцам и братьям нашим.')
+                                'отцам и братьям нашим.{endbold}')
         elif self.difference_between_days in [49]:
-            self.weekdayname = '{red}⊕ Пятидесятница. День святой Тройцы.{end}'
+            self.weekdayname = '{red}⊕ Пятидесятница. День святой Тройцы.{endred}'
         elif self.difference_between_days in [50]:
-            self.weekdayname = '{red}Понедельник святого Духа (Сл.).{end}'
+            self.weekdayname = '{red}Понедельник святого Духа (Сл.).{endred}'
         elif self.difference_between_days in range(51, 55):
             self.weekdayname = 'Седмица первая по Пятидесятнице.'
         elif self.difference_between_days in [55]:
-            self.weekdayname = '{red}Отдание праздника Пятидесятницы (Сл.).{end}'
+            self.weekdayname = '{red}Отдание праздника Пятидесятницы (Сл.).{endred}'
         elif self.difference_between_days in [56]:
-            self.weekdayname = '{red}Неделя Всех святых.{end}'
+            self.weekdayname = '{red}Неделя Всех святых.{endred}'
         #Неделя свв. Отцов, устав 16 июля.
         elif self.day in [13, 14, 15, 16, 17, 18, 19] and self.month in [7] and self.weekday in [0]:
             self.weekdayname = ('%s неделя по Пятидесятнице. {red}В сию неделю память совершаем святых отец, '
                                 'иже на первом соборе, в Никее сшедшася, 318. На втором соборе, сшедшася '
                                 'в царствующем граде, 150. На третием соборе во Ефесе, 200. На четвертом '
                                 'соборе, иже в Халкидоне, 630. На пятом соборе, 165. На шестом соборе, 170. '
-                                'И всех вкупе, 1633.{end}') % str(self.week_after_pentecost)
+                                'И всех вкупе, 1633.{endred}') % str(self.week_after_pentecost)
         #Неделя по Воздвижении.
         elif self.day in [15, 16, 17, 18, 19, 20, 21] and self.month in [9] and self.weekday in [0]:
-            self.weekdayname = ('{red}Неделя по Воздвижении.{end} '
+            self.weekdayname = ('{red}Неделя по Воздвижении.{endred} '
                                 '%s неделя по Пятидесятнице.') % str(self.week_after_pentecost)
         #Неделя свв. Отцов, устав 11 октября.
         elif self.day in [8, 9, 10, 11, 12, 13, 14] and self.month in [10] and self.weekday in [0]:
@@ -250,11 +250,11 @@ class AncientCalendar:
                                 'святых отец, 367. На потребление и посрамление безбожных предании, '
                                 'хритстоненавидец и християноукоритель, и иконоборец, Копронима же '
                                 'нечестиваго, и окаяных его епископ, и неосвященных его архиерей, '
-                                'и того безбожнаго и окаяннаго собора.{end}') % str(self.week_after_pentecost)
+                                'и того безбожнаго и окаяннаго собора.{endred}') % str(self.week_after_pentecost)
         #Неделя свв. Праотец.
         elif self.day in [11, 12, 13, 14, 15, 16, 17] and self.month in [12] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя святых Праотец. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         #Суббота перед Рожеством.
         elif self.day in [18, 19, 20, 21, 22, 23, 24] and self.month in [12] and self.weekday in [6]:
             self.weekdayname = ('Суббота перед Рожеством Христовым. '
@@ -262,7 +262,7 @@ class AncientCalendar:
         #Неделя перед Рожеством.
         elif self.day in [18, 19, 20, 21, 22, 23, 24] and self.month in [12] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя пред Рожеством Христовым, святых Отец. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         #Суббота после Рожества.
         elif self.day in [26, 27, 28, 29, 30, 31] and self.month in [12] and self.weekday in [6]:
             self.weekdayname = ('Суббота после Рожества Христова. '
@@ -270,10 +270,10 @@ class AncientCalendar:
         #Неделя после Рожества.
         elif self.day in [26, 27, 28, 29, 30, 31] and self.month in [12] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя после Рожества Христова, святых Богоотец. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         elif self.day in [1] and self.month in [1] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя после Рожества Христова, святых Богоотец. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         #Суббота пред Просвещением. Бывает не каждый год.
         elif self.day in [1, 2, 3, 4, 5] and self.month in [1] and self.weekday in [6]:
             self.weekdayname = ('Суббота пред Просвещением. '
@@ -281,7 +281,7 @@ class AncientCalendar:
         #Неделя пред Просвещением. Бывает не каждый год.
         elif self.day in [1, 2, 3, 4, 5] and self.month in [1] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя пред Просвещением. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         #Суббота по Просвещении.
         elif self.day in [7, 8, 9, 10, 11, 12, 13] and self.month in [1] and self.weekday in [6]:
             self.weekdayname = ('Суббота по Просвещении. '
@@ -289,22 +289,22 @@ class AncientCalendar:
         #Неделя по Просвещении.
         elif self.day in [7, 8, 9, 10, 11, 12, 13] and self.month in [1] and self.weekday in [0]:
             self.weekdayname = ('{red}Неделя по Просвещении. '
-                                '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
+                                '%s неделя по Пятидесятнице (Пл.).{endred}') % str(self.week_after_pentecost)
         else:
             #Полиелиос в неделю после отдания Воздвижения.
             if self.weekday in [0] and self.julian_date_today > ju_to_jd(5, 10, self.year):
-                self.weekdayname = '{red}%s неделя по Пятидесятнице (Пл.).{end}' % str(self.week_after_pentecost)
+                self.weekdayname = '{red}%s неделя по Пятидесятнице (Пл.).{endred}' % str(self.week_after_pentecost)
             elif self.weekday in [0]:
                 self.weekdayname = '%s неделя по Пятидесятнице.' % str(self.week_after_pentecost)
             #Димитревская суббота. Если Казанская [4], то переносится в следующую субботу [11].
             elif self.day in [11] and self.month in [10] and self.weekday in [6]:
-                self.weekdayname = ('%s суббота по Пятидесятнице. Димитревская родительская суббота. '
+                self.weekdayname = ('{bold}%s суббота по Пятидесятнице. Димитревская родительская суббота. '
                                     'Поминание усопших воинов '
-                                    'и всех православных християн. ') % str(self.week_after_pentecost + 1)
+                                    'и всех православных християн.{endbold} ') % str(self.week_after_pentecost + 1)
             elif self.day in [1, 2, 3, 5, 6, 7] and self.month in [10] and self.weekday in [6]:
-                self.weekdayname = ('%s суббота по Пятидесятнице. Димитревская родительская суббота. '
+                self.weekdayname = ('{bold}%s суббота по Пятидесятнице. Димитревская родительская суббота. '
                                     'Поминание усопших воинов '
-                                    'и всех православных християн. ') % str(self.week_after_pentecost + 1)
+                                    'и всех православных християн.{endbold} ') % str(self.week_after_pentecost + 1)
             elif self.weekday in [6]:
                 self.weekdayname = '%s суббота по Пятидесятнице.' % str(self.week_after_pentecost + 1)
             else:
@@ -810,7 +810,7 @@ class AncientCalendar:
             11: 'Для постящихся в понедельник — пища с рыбой,  для остальных — пища скоромная.',
             12: 'На трапезе — молоко, сыр, яйца.',
             13: 'Пища скоромная.',
-            14: 'Пища без масла, пьем вино ради восопминания Вечери Господней.'
+            14: 'Пища без масла, пьем вино ради воспоминания Вечери Господней.'
         }
 
         return self.fasts_word[self.fast]
@@ -821,47 +821,27 @@ class AncientCalendar:
         #Устав о приходных и исходных полонах всего лета.
         #В неделю Сыропустную.
         if self.difference_between_days in [-49]:
-            self.bows = ('Утром, на службе приходные и исходные поклоны  поясные, '
+            self.bows = ('Утром, на службе приходные и исходные поклоны поясные, '
                          'а вечером — приходные поясные, исходные земные.')
-        #Устав на полиелеосы в Великий Пост.
+        #Great Lent.
         elif self.difference_between_days in range(-49, 0):
-            if self.weekday in [5]:
-                if self.bow in [2, 3, 4, 5]:
-                    self.bows = 'Приходные и исходные поклоны земные.'
-                elif self.weekday in [5] and self.bow in [2, 3, 4, 5]:
-                    self.bows = ('Утром, на службе приходные и исходные поклоны  земные, '
-                                 'а вечером — приходные и исходные поясные.')
-                #В неделю.
-                elif self.weekday in [0] and self.bow in [2, 3, 4, 5]:
-                    self.bows = ('Утром, на службе приходные и исходные поклоны  поясные, '
-                                 'а вечером — приходные поясные, исходные земные.')
-                elif self.weekday in [5] and self.bow in [2, 3, 4, 5]:
-                    self.bows = ('Утром, на службе приходные и исходные поклоны  земные, '
-                                 'а вечером — приходные и исходные поясные.')
-                elif self.weekday in [0] and self.bow in [2, 3, 4, 5]:
-                    self.bows = ('Утром, на службе приходные и исходные поклоны  поясные, '
-                                 'а вечером — приходные поясные, исходные земные.')
-            #В неделю.
-            elif self.weekday in [0]:
-                #Если нет попразненства,
-                #утром, на службе приходные и
-                #поклоны  поясные,
-                #а вечером — приходные поясные,
-                #исходные земные.
-                if self.bow in [0, 1, 2, 3]:
-                    self.bows = ('Утром, на службе приходные и исходные поклоны  поясные, '
-                                 'а вечером — приходные поясные, исходные земные.')
-            #Попраздненство: приходные
-            #и исходные поясные с утра и вечером.
-            elif self.bow in [5]:
-                self.bows = 'Приходные и исходные поклоны поясные.'
+            #Friday.
+            if self.weekday in [5] and self.bow in [0, 1, 2, 3, 4, 5]:
+                self.bows = ('Утром, на службе приходные и исходные поклоны земные, '
+                             'а вечером — приходные и исходные поясные.')
+            #Sunday.
+            elif self.weekday in [0] and self.bow in [0, 1, 2, 3, 4, 5]:
+                self.bows = ('Утром, на службе приходные и исходные поклоны поясные, '
+                             'а вечером — приходные поясные, исходные земные.')
             #В субботу поклоны поясные.
             elif self.weekday in [6]:
-                #Кроме Великой  субботы.
+                #Кроме Великой субботы.
                 if self.difference_between_days in [-1]:
-                    self.bows = 4
+                    self.bows = 'Приходные и исходные поклоны земные.'
+                else:
+                    self.bows = 'Приходные и исходные поклоны поясные.'
             else:
-                self.bows = 'Приходные и исходные поклоны поясные.'
+                self.bows = 'Приходные и исходные поклоны земные.'
         #От Пасхи до недели Всех Святых.
         #поклоны поясные.
         elif self.difference_between_days in range(0, 58):
@@ -1020,9 +1000,9 @@ if __name__ == "__main__":
         print textwrap.fill(cal.getJulianDate(verbose='on'), initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  '), '\n'
-        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=100,
-                            initial_indent='  ', subsequent_indent='  '), '\n'
-        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', endred='\033[0m', bold='\033[33m',
+                            endbold='\033[0m'),  width=100, initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', endred='\033[0m'), width=100,
                             initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  '), '\n\n'
@@ -1036,9 +1016,9 @@ if __name__ == "__main__":
         print textwrap.fill(cal.getJulianDate(verbose='on'), initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  '), '\n'
-        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', end='\033[0m'), width=100,
-                            initial_indent='  ', subsequent_indent='  '), '\n'
-        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m'), width=100,
+        print textwrap.fill(cal.getWeekdayname().format(red='\033[31m', endred='\033[0m', bold='\033[33m',
+                            endbold='\033[0m'),  width=100, initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', endred='\033[0m'), width=100,
                             initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  '), '\n\n'
