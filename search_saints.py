@@ -19,8 +19,7 @@ def search_saints(search_string):
     d = menology
     out = []
     year = datetime.date.today().year
-    #TODO: запретить искать в середине слова.
-    pattern = re.compile(search_string[:-1], re.IGNORECASE | re.UNICODE)
+    pattern = re.compile(ur'{0}*'.format(search_string), re.I | re.U)
 
     #Ищем в menology строку; если есть, добавляем в out.
     for key, value in d.iteritems():
@@ -59,14 +58,14 @@ def search_saints(search_string):
                 + '  ' + item[0][1] + ' по н. ст.' + '\n' + \
                 textwrap.fill(str(item[1][0]), initial_indent='  ') \
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
-                textwrap.fill(item[2][0].format(red='\033[31m', end='\033[0m').lstrip(),
+                textwrap.fill(str(item[2][0]).format(red='\033[31m', end='\033[0m').lstrip(),
                               width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
         return string_out
 
 if __name__ == "__main__":
 
     search_string = raw_input('Input saint name >>> ')
-    search_saints(search_string)
+    print search_saints(search_string)
 
 
 
