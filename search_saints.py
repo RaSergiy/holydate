@@ -58,7 +58,7 @@ def search_saints(search_string):
                 + '  ' + item[0][1] + ' по н. ст.' + '\n' + \
                 textwrap.fill(str(item[1][0]), initial_indent='  ') \
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
-                textwrap.fill(str(item[2][0]).format(red='\033[31m', end='\033[0m').lstrip(),
+                textwrap.fill(str(item[2][0]).format(red='\033[31m', end='\033[0m', tw='⊕', pl='☩').lstrip(),
                               width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
         return string_out
 
