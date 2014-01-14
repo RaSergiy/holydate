@@ -53,10 +53,9 @@ def ju_to_jd(day, month, year):
     return jd
 
 
-def gr_to_ju(day, month, year):
+def gr_to_jd(day, month, year):
     """ 
-    Convert Griorian calendar date to Julian Date(JD). 
-    
+    Convert Griorian calendar date to Julian Date(JD).
     """
 
     def mod(x, y):
@@ -115,15 +114,15 @@ def jd_to_gr(JD):
     month = i + 3 - 12 * mod(i, 10)
     year = 100 * e + f - 4800 + mod(i, 10)
 
-    #return Grigorian calendar date:
+    #Grigorian calendar date:
     return day, month, year
 
 
 def weekday_ju(day, month, year):
     """ 
-    Return weekday in Julian calendar(0-6 ~ Sun-Sut) 
+    Return weekday in Julian calendar(0-6 ~ Sun-Sat)
     for year, month (1-12),  day (1-31).
-       
+
     """
 
     def mod(x, y):
@@ -138,7 +137,7 @@ def weekday_ju(day, month, year):
     return weekday
 
 
-def gr_to_jd(day, month, year):
+def gr_to_ju(day, month, year):
     """ 
     Convert Griorian calendar date to Julian 
     calendar date. 
@@ -153,7 +152,7 @@ def gr_to_jd(day, month, year):
     c = month + 12 * a - 3
     #calculate JD
     jd = day + mod(153 * c + 2, 5) + 365 * b + mod(b, 4) - \
-         mod(b, 100) + mod(b, 400) - 32045
+        mod(b, 100) + mod(b, 400) - 32045
 
     #Calculate julian calendar date from JD.
     e = 0
@@ -170,14 +169,64 @@ def gr_to_jd(day, month, year):
     return day, month, year    
                     
 
+def ju_to_gr_in_search(day, month, year):
+    """
+    Convert Julian calendar date to Grigorian
+    calendar date in search module.
+
+    """
+
+    def mod(x, y):
+        return x / y
+
+    a = mod(14 - month, 12)
+    b = year + 4800 - a
+    c = month + 12 * a - 3
+    #calculate julian date
+    JD = day + mod(153 * c + 2, 5) + 365 * b + mod(b, 4) - 32083
+
+    d = JD + 32044
+    e = mod(4 * d + 3, 146097)
+    g = d - mod(146097 * e, 4)
+    f = mod(4 * g + 3, 1461)
+    j = g - mod(1461 * f, 4)
+    i = mod(5 * j + 2, 153)
+
+    day = j - mod(153 * i + 2, 5) + 1
+    month = i + 3 - 12 * mod(i, 10)
+    year = 100 * e + f - 4800 + mod(i, 10)
+
+    #Grigorian calendar date:
+    return [day, month]
 
 
+def ju_to_gr(day, month, year):
+    """
+    Convert Julian calendar date to Grigorian
+    calendar date
 
+    """
 
+    def mod(x, y):
+        return x / y
 
+    a = mod(14 - month, 12)
+    b = year + 4800 - a
+    c = month + 12 * a - 3
+    #calculate julian date
+    JD = day + mod(153 * c + 2, 5) + 365 * b + mod(b, 4) - 32083
 
+    d = JD + 32044
+    e = mod(4 * d + 3, 146097)
+    g = d - mod(146097 * e, 4)
+    f = mod(4 * g + 3, 1461)
+    j = g - mod(1461 * f, 4)
+    i = mod(5 * j + 2, 153)
 
+    day = j - mod(153 * i + 2, 5) + 1
+    month = i + 3 - 12 * mod(i, 10)
+    year = 100 * e + f - 4800 + mod(i, 10)
 
+    #Grigorian calendar date:
+    return day, month, year
 
-
-                
