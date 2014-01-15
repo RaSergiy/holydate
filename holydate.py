@@ -87,7 +87,11 @@ class AncientCalendar:
         elif self.difference_between_days in range(-62, -57):
             self.weekdayname = 'Седмица Мясопустная.'
         elif self.difference_between_days in [-57]:
-            self.weekdayname = '{bold}Суббота Мясопустная. Вселенское поминание усопших.{end}'
+            #Если полиелеос, то заупокой не служим.
+            if self.saints in [4, 5, 6]:
+                self.weekdayname = 'Суббота Мясопустная.'
+            elif self.saints in [1, 2, 3]:
+                self.weekdayname = '{bold}Суббота Мясопустная. Вселенское поминание усопших.{end}'
         elif self.difference_between_days in [-56]:
             self.weekdayname = '{red}Неделя Мясопустная. Воспоминание Страшного суда.{end}'
         elif self.difference_between_days in range(-55, -50):
@@ -106,7 +110,11 @@ class AncientCalendar:
         elif self.difference_between_days in range(-41, -36):
             self.weekdayname = 'Вторая седмица Великого поста.'
         elif self.difference_between_days in [-36]:
-            self.weekdayname = '{bold}Вторая суббота Великого поста. Поминание усопших.{end}'
+            # Если полиелеос, заупокой не служим.
+            if self.saint in [4, 5, 6]:
+                self.weekdayname = 'Вторая суббота Великого поста.'
+            elif self.saint in [1, 2, 3]:
+                self.weekdayname = '{bold}Вторая суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-35]:
             self.weekdayname = ('{red}Вторая неделя Великого поста. По уставу Успенского собора '
                                 'Московского Кремля совершается служба Федоровской '
@@ -114,14 +122,19 @@ class AncientCalendar:
         elif self.difference_between_days in range(-34, -29):
             self.weekdayname = 'Третья седмица Великого поста.'
         elif self.difference_between_days in [-29]:
-            self.weekdayname = '{bold}Третья суббота Великого поста. Поминание усопших.{end}'
+            if self.saint in [4, 5, 6]:
+                self.weekdayname = 'Третья суббота Великого поста.'
+            elif self.saint in [1, 2, 3]:
+                self.weekdayname = '{bold}Третья суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-28]:
             self.weekdayname = '{red}Третья неделя Великого поста. Поклонение Честному Кресту.{end}'
         elif self.difference_between_days in range(-27, -22):
             self.weekdayname = 'Четвертая седмица Великого поста.'
-        #TODO: если преподает полиелиос, то заупокой не служим.
         elif self.difference_between_days in [-22]:
-            self.weekdayname = '{bold}Четвертая суббота Великого поста. Поминание усопших.{end}'
+            if self.saint in [4, 5, 6]:
+                self.weekdayname = 'Четвертая суббота Великого поста.'
+            elif self.saint in [1, 2, 3]:
+                self.weekdayname = '{bold}Четвертая суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-21]:
             self.weekdayname = '{red}Четвертая неделя Великого поста. Иоанна Лествичника.{end}'
         elif self.difference_between_days in range(-20, -15):
@@ -176,7 +189,7 @@ class AncientCalendar:
                 #TODO: Переписать, т. к. Радоница переносится,
                 #если припадает в этот день Георгий Победоносец.
                 self.weekdayname = ('{bold}Радоница. Во вторник второй седмицы по Пасхе '
-                                    'совершаем поминовение усопших{end}')
+                                    'совершаем поминовение усопших.{end}')
             else:
                 self.weekdayname = 'Седмица вторая по Пасхе о Фоме.'
         elif self.difference_between_days in [14]:
@@ -219,9 +232,12 @@ class AncientCalendar:
         elif self.difference_between_days in [47]:
             self.weekdayname = 'Седмица седьмая по Пасхе.'
         elif self.difference_between_days in [48]:
-            self.weekdayname = ('{bold}В субботу седьмую по Пасхе совершаем память '
-                                'всем успопшим от века во Христа верующим '
-                                'отцам и братьям нашим.{end}')
+            if self.saints in [4, 5, 6]:
+                self.weekdayname = 'Суббота седьмая по Пасхе.'
+            elif self.saints in [1, 2, 3]:
+                self.weekdayname = ('{bold}В субботу седьмую по Пасхе совершаем память '
+                                    'всем успопшим от века во Христа верующим '
+                                    'отцам и братьям нашим.{end}')
         elif self.difference_between_days in [49]:
             self.weekdayname = '{red}{tw} Пятидесятница. День святой Тройцы.{end}'
         elif self.difference_between_days in [50]:
