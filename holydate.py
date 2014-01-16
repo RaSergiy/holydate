@@ -88,9 +88,10 @@ class AncientCalendar:
             self.weekdayname = 'Седмица Мясопустная.'
         elif self.difference_between_days in [-57]:
             #Если полиелеос, то заупокой не служим.
-            if self.saints in [4, 5, 6]:
+            #TODO: посмотреть отдание Сретения.
+            if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Суббота Мясопустная.'
-            elif self.saints in [1, 2, 3]:
+            elif self.saint in [1, 2, 3]:
                 self.weekdayname = '{bold}Суббота Мясопустная. Вселенское поминание усопших.{end}'
         elif self.difference_between_days in [-56]:
             self.weekdayname = '{red}Неделя Мясопустная. Воспоминание Страшного суда.{end}'
@@ -232,9 +233,9 @@ class AncientCalendar:
         elif self.difference_between_days in [47]:
             self.weekdayname = 'Седмица седьмая по Пасхе.'
         elif self.difference_between_days in [48]:
-            if self.saints in [4, 5, 6]:
+            if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Суббота седьмая по Пасхе.'
-            elif self.saints in [1, 2, 3]:
+            elif self.saint in [1, 2, 3]:
                 self.weekdayname = ('{bold}В субботу седьмую по Пасхе совершаем память '
                                     'всем успопшим от века во Христа верующим '
                                     'отцам и братьям нашим.{end}')
@@ -376,7 +377,7 @@ class AncientCalendar:
             elif self.weekday in [3, 5] and self.saint in [6]:
                 self.fast = 5
         #От Недели мясопустной до Недели Сыропустной.
-        elif self.difference_between_days in range(-56, -48):
+        elif self.difference_between_days in range(-55, -48):
             #Седмица сплошная, на трапезе — млеко, сыр, яйца.
             self.fast = 6
         #От Недели сыропустной до первой недели Великого поста.
