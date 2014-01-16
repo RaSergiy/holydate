@@ -1001,9 +1001,9 @@ if __name__ == "__main__":
         print textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getWeekdayname().format(red='\033[31m',  bold='\033[33m', end='\033[0m',
-                            tw='⊕', pl='☩'), width=100, initial_indent='  ', subsequent_indent='  '), '\n'
-        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m', tw='⊕', pl='☩'), width=100,
-                            initial_indent='  ', subsequent_indent='  '), '\n'
+                            sx='', gl='', tw='⊕', pl='☩'), width=100, initial_indent='  ', subsequent_indent='  '), '\n'
+        print textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m', sx='', gl='',  pl='☩', tw='⊕'),
+                            width=100, initial_indent='  ', subsequent_indent='  '), '\n'
         print textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ')
         print textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  '), '\n\n'
 
