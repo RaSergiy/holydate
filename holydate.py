@@ -274,7 +274,7 @@ class AncientCalendar:
                                 '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
         #Суббота перед Рожеством.
         elif self.day in [18, 19, 20, 21, 22, 23, 24] and self.month in [12] and self.weekday in [6]:
-            self.weekdayname = ('Суббота перед Рожеством Христовым. '
+            self.weekdayname = ('{bold}Суббота перед Рожеством Христовым.{end} '
                                 '%s суббота по Пятидесятнице.') % str(self.week_after_pentecost + 1)
         #Неделя перед Рожеством.
         elif self.day in [18, 19, 20, 21, 22, 23, 24] and self.month in [12] and self.weekday in [0]:
@@ -282,7 +282,7 @@ class AncientCalendar:
                                 '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
         #Суббота после Рожества.
         elif self.day in [26, 27, 28, 29, 30, 31] and self.month in [12] and self.weekday in [6]:
-            self.weekdayname = ('Суббота после Рожества Христова. '
+            self.weekdayname = ('{bold}Суббота после Рожества Христова.{end} '
                                 '%s суббота по Пятидесятнице.') % str(self.week_after_pentecost + 1)
         #Неделя после Рожества.
         elif self.day in [26, 27, 28, 29, 30, 31] and self.month in [12] and self.weekday in [0]:
@@ -293,7 +293,7 @@ class AncientCalendar:
                                 '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
         #Суббота пред Просвещением. Бывает не каждый год.
         elif self.day in [1, 2, 3, 4, 5] and self.month in [1] and self.weekday in [6]:
-            self.weekdayname = ('Суббота пред Просвещением. '
+            self.weekdayname = ('{bold}Суббота пред Просвещением.{end} '
                                 '%s суббота по Пятидесятнице.') % str(self.week_after_pentecost + 1)
         #Неделя пред Просвещением. Бывает не каждый год.
         elif self.day in [1, 2, 3, 4, 5] and self.month in [1] and self.weekday in [0]:
@@ -301,7 +301,7 @@ class AncientCalendar:
                                 '%s неделя по Пятидесятнице (Пл.).{end}') % str(self.week_after_pentecost)
         #Суббота по Просвещении.
         elif self.day in [7, 8, 9, 10, 11, 12, 13] and self.month in [1] and self.weekday in [6]:
-            self.weekdayname = ('Суббота по Просвещении. '
+            self.weekdayname = ('{bold}Суббота по Просвещении.{end} '
                                 '%s суббота по Пятидесятнице.') % str(self.week_after_pentecost + 1)
         #Неделя по Просвещении.
         elif self.day in [7, 8, 9, 10, 11, 12, 13] and self.month in [1] and self.weekday in [0]:
