@@ -1,2 +1,2 @@
-include README README.rst DESCRIPTION INSTALL.txt
+include README.rst DESCRIPTION
 exclude *.pyc
