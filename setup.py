@@ -33,7 +33,7 @@ setup(
     package_data = {'': ['README.rst']},
     install_requires=['pytils'],
     classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Religion',
         'Intended Audience :: Developers',
