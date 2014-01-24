@@ -7,6 +7,7 @@ TODO
 * method for marking feasts and fasts for GUI widget
 * GUI (PyQT)
 * documentation
+* tests
 * deb version
 
 DONE
