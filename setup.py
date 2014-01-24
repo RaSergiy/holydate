@@ -37,7 +37,7 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Religion',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GPLv3 License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
         'Natural Language :: Russian',
