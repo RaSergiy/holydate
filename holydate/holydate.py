@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-""" Holydate -- the ancient orthodox calendar.
+"""
+The module Holydate represent
+oldbeliever ancient orthodox calendar.
 
 holydate.holydate
 ~~~~~~~~~~~~~~~~~
-
-This module represent oldbeliever orthodox calendar.
 
 :copyright: 2014 by Maxim Chernytevich.
 :license: GPLv3, see LICENSE for more details.
@@ -80,8 +80,10 @@ class AncientCalendar:
         #Переходящие праздники.
         if self.difference_between_days in [-70]:
             self.weekdayname = '{red}Неделя о Мытаре и Фарисее. Начало Триоди постной.{end}'
-        elif self.difference_between_days in range(-69, -63):
+        elif self.difference_between_days in range(-69, -64):
             self.weekdayname = 'Cедмица о Мытаре и Фарисее.'
+        elif self.difference_between_days in [-64]:
+            self.weekdayname = 'Cуббота о Мытаре и Фарисее.'
         elif self.difference_between_days in [-63]:
             self.weekdayname = '{red}Неделя о Блудном сыне.{end}'
         elif self.difference_between_days in range(-62, -57):
@@ -860,11 +862,15 @@ class AncientCalendar:
         #поклоны поясные.
         elif self.difference_between_days in range(0, 58):
             self.bows = 0
-        #Когда нет Триоди.
+        #Когда нет Великого Поста, но от
+        #недели о Мытаре и Фарисее.
         else:
+            #TODO: на самом деле, устав сложнее:
+            #если на завтра праздник, то поклоны поясные.
+            #TODO: добавить устав на попраздненства в неделю.
             #В воскресенье.
             if self.weekday in [0]:
-                self.bows = 0
+                self.bows = 1
             #Среди седмицы во все двунадесятые, бденные,
             #полиелеосные праздники,
             #когда выход и славословие,
