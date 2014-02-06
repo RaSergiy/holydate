@@ -807,6 +807,7 @@ class AncientCalendar:
             #В неделю, вторник, четверг, субботу.
             if self.weekday in [0, 2, 4, 6] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                 self.fast = 7
+            #TODO: Посмотреть устав на 5,6.
             #В для тех кто постится в понедельник.
             elif self.weekday in [1] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                 self.fast = 11
@@ -870,9 +871,9 @@ class AncientCalendar:
             #В воскресенье.
             if self.weekday in [0]:
                 #In after-feasts days.
-                if bow in [5]:
+                if self.bow in [5]:
                     self.bows = 0
-                elif bow in [0, 1, 2, 3, 4]:
+                elif self.bow in [0, 1, 2, 3, 4]:
                     self.bows = 1
             #Среди седмицы во все двунадесятые, бденные,
             #полиелеосные праздники,
