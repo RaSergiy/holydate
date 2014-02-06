@@ -59,7 +59,7 @@ def main():
         except UnicodeDecodeError:
             return 'Transliteration is not working!'
 
-    parser = argparse.ArgumentParser(description='Holydate, 0.1  ancient orthodox calendar.',
+    parser = argparse.ArgumentParser(description='Holydate, 0.1а1  ancient orthodox calendar.',
                                      epilog='Report bugs and wishes to <vechnoe.info@gmail.com>',
                                      prog='holydate',
                                      formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=127))
@@ -71,7 +71,7 @@ def main():
     parser.add_argument('-s', '--search', dest='string', action='store', type=str,
                         help='search saints and holidays in orthodoxy Menology')
 
-    parser.add_argument('-v', '--version', action='version', version='Holydate version is 0.1')
+    parser.add_argument('-v', '--version', action='version', version='Holydate version is 0.1а1')
 
     results = parser.parse_args()
 
