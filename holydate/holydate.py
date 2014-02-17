@@ -941,7 +941,7 @@ class AncientCalendar:
         if verbose == 'on':
             return self.weekday_word[weekday_ju(self.day,  self.month, self.year)]
         elif verbose == 'off':
-            weekday_ju(self.day,  self.month, self.year)
+            return weekday_ju(self.day,  self.month, self.year)
         else:
             return 'Error. Value of verbose must be [on|off].'
 
@@ -971,7 +971,7 @@ class AncientCalendar:
             return 'Error. Value of verbose must be [on|off].'
 
     def getGrigorianDate(self, verbose='on'):
-        """Get grigorian calendar date."""
+        """Get grеgorian calendar date."""
 
         self.month_word = {
             1: 'января',
@@ -991,6 +991,8 @@ class AncientCalendar:
         if verbose == 'on':
             return str(self.gr_day) + ' ' + self.month_word[self.gr_month] + ' ' + str(self.gr_year) + ' года по н. ст.'
         elif verbose == 'off':
-            return self.gr_day,  self.gr_month, self.gr_year
+            return self.gr_day, self.gr_month, self.gr_year
         else:
             return 'Error. Value of verbose must be [on|off].'
+
+
