@@ -59,7 +59,7 @@ class AncientCalendar:
         else:
             if self.difference_between_days in range(-8, 0) and self.month in [1, 2, 3, 4]:
                 self.tone = ((self.julian_date_today - (ju_to_jd(*easter(self.year - 1)))) / 7) % 8
-            elif self.difference_between_days > 6:
+            else:
                 self.tone = ((self.julian_date_today - (ju_to_jd(*easter(self.year)))) / 7) % 8
         self.tone_word = {
             1: 'первый',
