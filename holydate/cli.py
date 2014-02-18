@@ -35,8 +35,8 @@ def main():
             textwrap.fill(cal.getWeekday(verbose='on'), initial_indent='  ', subsequent_indent='  ') + '\n' +\
             textwrap.fill(cal.getTone(), initial_indent='  ', subsequent_indent='  ') + '\n\n' + \
             textwrap.fill(cal.getWeekdayname().format(red='\033[31m',  bold='\033[33m', end='\033[0m',
-                          sx='ⵛ', gl='ⵛ', tw='⊕', pl='☩'), width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n' + \
-            textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m', sx='ⵛ', gl='ⵛ',  pl='☩', tw='⊕'),
+                          sx='ⵛ', gl='ⵛ', tw='⊕', pl='☩', redgui=''), width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n' + \
+            textwrap.fill(cal.getSaint().format(red='\033[31m', end='\033[0m', sx='ⵛ', gl='ⵛ',  pl='☩', tw='⊕', redgui=''),
                           width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n' + \
             textwrap.fill(cal.getFast(), initial_indent='  ', subsequent_indent='  ') + '\n' +\
             textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  ') + '\n\n'
