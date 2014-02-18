@@ -180,11 +180,19 @@ class AncientCalendar:
         elif self.difference_between_days in [0]:
             self.weekdayname = '{red}{tw} Пасха. Светлое Христово Воскресенье.{end}'
         elif self.difference_between_days in range(1, 7):
-            if self.weekday in [2]:
+            if self.weekday in [1]:
+                self.weekdayname = '{red}Светлый понедельник.{redgui}{end}'
+            elif self.weekday in [2]:
                 self.weekdayname = ('{red}{pl} Во вторник Светлой седмицы празднуем праздник  '
-                                    'Одигитрии пресв. Богородицы.{end}')
-            else:
-                self.weekdayname = '{red}Светлая седмица.{end}'
+                                    'Одигитрии пресв. Богородицы.{redgui}{end}')
+            elif self.weekday in [3]:
+                self.weekdayname = '{red}Светлая среда.{redgui}{end}'
+            elif self.weekday in [4]:
+                self.weekdayname = '{red}Светлый четверг.{redgui}{end}'
+            elif self.weekday in [5]:
+                self.weekdayname = '{red}Светлая пятница.{redgui}{end}'
+            elif self.weekday in [6]:
+                self.weekdayname = '{red}Светлая суббота.{redgui}{end}'
         elif self.difference_between_days in [7]:
             self.weekdayname = '{red}Неделя о Фоме. Антипасха.{end}'
         elif self.difference_between_days in range(8, 14):
