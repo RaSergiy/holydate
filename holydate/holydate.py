@@ -51,7 +51,7 @@ class AncientCalendar:
     def getTone(self):
         """Get Tone for day."""
 
-        #Светлая седмица.
+        #The Bright week.
         if self.difference_between_days in range(0, 6):
             self.tone = self.weekday + 1
         elif self.difference_between_days in [6]:
