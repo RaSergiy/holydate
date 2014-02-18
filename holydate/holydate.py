@@ -93,7 +93,7 @@ class AncientCalendar:
             #TODO: посмотреть отдание Сретения.
             if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Суббота Мясопустная.'
-            elif self.saint in [1, 2, 3]:
+            elif self.saint in [0, 1, 2, 3]:
                 self.weekdayname = '{bold}Суббота Мясопустная. Вселенское поминание усопших.{end}'
         elif self.difference_between_days in [-56]:
             self.weekdayname = '{red}Неделя Мясопустная. Воспоминание Страшного суда.{end}'
