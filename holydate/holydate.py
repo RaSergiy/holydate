@@ -57,7 +57,7 @@ class AncientCalendar:
         elif self.difference_between_days in [6]:
             self.tone = 0
         else:
-            if self.difference_between_days < -8 and self.month in [1, 2, 3, 4]:
+            if self.difference_between_days in range(-8, 0) and self.month in [1, 2, 3, 4]:
                 self.tone = ((self.julian_date_today - (ju_to_jd(*easter(self.year - 1)))) / 7) % 8
             elif self.difference_between_days > 6:
                 self.tone = ((self.julian_date_today - (ju_to_jd(*easter(self.year)))) / 7) % 8
@@ -996,3 +996,8 @@ class AncientCalendar:
             return 'Error. Value of verbose must be [on|off].'
 
 
+if __name__ == "__main__":
+
+    cal = AncientCalendar(26, 4, 2014)
+
+    print cal.getTone()
