@@ -237,7 +237,7 @@ class AncientCalendar:
         elif self.difference_between_days in [48]:
             if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Суббота седьмая по Пасхе.'
-            elif self.saint in [1, 2, 3]:
+            elif self.saint in [0, 1, 2, 3]:
                 self.weekdayname = ('{bold}В субботу седьмую по Пасхе совершаем память '
                                     'всем успопшим от века во Христа верующим '
                                     'отцам и братьям нашим.{end}')
