@@ -627,16 +627,16 @@ class AncientCalendar:
         #От Недели Фоминой до Пятидесятницы.
         elif self.difference_between_days in range(7, 50):
             #Неделя Фомина и другие недели.
-            if self.weekday in [0] and self.saint in [0, 1, 2, 3, 4, 5]:
+            if self.weekday in [0] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                 self.fast = 7
             #В для тех кто постится в понедельник.
-            elif self.weekday in [1] and self.saint in [0, 1, 2, 3, 4, 5]:
+            elif self.weekday in [1] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                 self.fast = 11
             #Во вторник, четверг, субботу.
-            elif self.weekday in [2, 4, 6] and self.saint in [0, 1, 2, 3, 4, 5]:
+            elif self.weekday in [2, 4, 6] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                     self.fast = 7
             #В среду, пятницу.
-            elif self.weekday in [3, 5] and self.saint in [0, 1, 2, 3, 4, 5]:
+            elif self.weekday in [3, 5] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                     self.fast = 5
             #Сплошная седмица от Пятидесятницы до недели Всех святых.
             elif self.difference_between_days in range(50, 58):
