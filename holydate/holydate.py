@@ -116,7 +116,7 @@ class AncientCalendar:
             # Если полиелеос, заупокой не служим.
             if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Вторая суббота Великого поста.'
-            elif self.saint in [1, 2, 3]:
+            elif self.saint in [0, 1, 2, 3]:
                 self.weekdayname = '{bold}Вторая суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-35]:
             self.weekdayname = ('{red}Вторая неделя Великого поста. По уставу Успенского собора '
@@ -127,7 +127,7 @@ class AncientCalendar:
         elif self.difference_between_days in [-29]:
             if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Третья суббота Великого поста.'
-            elif self.saint in [1, 2, 3]:
+            elif self.saint in [0, 1, 2, 3]:
                 self.weekdayname = '{bold}Третья суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-28]:
             self.weekdayname = '{red}Третья неделя Великого поста. Поклонение Честному Кресту.{end}'
@@ -136,7 +136,7 @@ class AncientCalendar:
         elif self.difference_between_days in [-22]:
             if self.saint in [4, 5, 6]:
                 self.weekdayname = 'Четвертая суббота Великого поста.'
-            elif self.saint in [1, 2, 3]:
+            elif self.saint in [0, 1, 2, 3]:
                 self.weekdayname = '{bold}Четвертая суббота Великого поста. Поминание усопших.{end}'
         elif self.difference_between_days in [-21]:
             self.weekdayname = '{red}Четвертая неделя Великого поста. Иоанна Лествичника.{end}'
