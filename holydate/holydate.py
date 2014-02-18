@@ -995,9 +995,3 @@ class AncientCalendar:
         else:
             return 'Error. Value of verbose must be [on|off].'
 
-
-if __name__ == "__main__":
-
-    cal = AncientCalendar(26, 4, 2014)
-
-    print cal.getTone()
