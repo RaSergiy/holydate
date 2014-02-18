@@ -358,7 +358,7 @@ class AncientCalendar:
         elif self.difference_between_days in range(-63, -56):
             if self.weekday in [0, 1, 2, 4, 6]:
                 #Пища скоромная.
-                if self.weekday in [0, 2, 4, 6] and self.saint in [1, 2, 3, 4, 5, 6]:
+                if self.weekday in [0, 2, 4, 6] and self.saint in [0, 1, 2, 3, 4, 5, 6]:
                     self.fast = 7
                 #Устав о трапезе, кто понедельничает.
                 elif self.weekday in [1] and self.saint in [0]:
@@ -506,7 +506,7 @@ class AncientCalendar:
             elif self.weekday in [1] and self.day in [22] and self.saint in [0, 1, 2, 3]:
                 self.fast = 2
             #В понедельник.
-            elif self.weekday in [1] and self.saint in [1, 2, 3]:
+            elif self.weekday in [1] and self.saint in [0, 1, 2, 3]:
                 self.fast = 1
             #В понедельник, если полиелиос.
             elif self.weekday in [1] and self.saint in [4, 5]:
@@ -695,7 +695,7 @@ class AncientCalendar:
                 self.fast = 1
             #В понедельник, среду, пятницу
             #пища без масла, если святой на 6 или полиелеос.
-            elif self.weekday in [1, 3, 5] and self.saint in [1, 2, 3, 4]:
+            elif self.weekday in [1, 3, 5] and self.saint in [0, 1, 2, 3, 4]:
                 self.fast = 2
             #В понедельник, среду, пятницу
             #пища с маслом, если бдение.
@@ -746,7 +746,7 @@ class AncientCalendar:
                 self.fast = 1
             #В понедельник, среду, пятницу
             #пища без масла, если святой на 6 или полиелеос.
-            elif self.weekday in [1, 3, 5] and self.saint in [1, 2, 3, 4]:
+            elif self.weekday in [1, 3, 5] and self.saint in [0, 1, 2, 3, 4]:
                 self.fast = 2
             #В понедельник, среду, пятницу
             #пища с маслом, если бдение.
