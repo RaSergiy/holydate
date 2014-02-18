@@ -55,7 +55,7 @@ class AncientCalendar:
         if self.difference_between_days in range(0, 6):
             self.tone = self.weekday + 1
         elif self.difference_between_days in [6]:
-            self.tone = 8
+            self.tone = 0
         else:
             if self.difference_between_days < -8 and self.month in [1, 2, 3, 4]:
                 self.tone = ((self.julian_date_today - (ju_to_jd(*easter(self.year - 1)))) / 7) % 8
@@ -178,7 +178,7 @@ class AncientCalendar:
         elif self.difference_between_days in [-1]:
             self.weekdayname = 'Великая суббота.'
         elif self.difference_between_days in [0]:
-            self.weekdayname = '{red}{tw} Пасха. Светлое Христово Воскресенье.{red}'
+            self.weekdayname = '{red}{tw} Пасха. Светлое Христово Воскресенье.{end}'
         elif self.difference_between_days in range(1, 7):
             if self.weekday in [2]:
                 self.weekdayname = ('{red}{pl} Во вторник Светлой седмицы празднуем праздник  '
