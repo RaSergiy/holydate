@@ -59,7 +59,7 @@ def search_saints(search_string):
                 textwrap.fill(str(item[1][0]), initial_indent='  ') \
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
                 textwrap.fill(str(item[2][0]).lstrip(),
-                              width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
+                              width=100, initial_indent=' ', subsequent_indent='  ') + '\n\n'
         return string_out
 
 if __name__ == "__main__":
