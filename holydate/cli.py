@@ -42,6 +42,13 @@ def main():
             textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  ') + '\n\n'
         return out
 
+    def search_constructor(string):
+        """Construct command-line out."""
+
+        result = search_saints(string)
+        return result.format(red='\033[31m', end='\033[0m', sx='', gl='', pl='☩', tw='⊕', redgui='')
+
+
     def isodate(string):
         """Add new argparse type. Check date format."""
         try:
@@ -98,9 +105,9 @@ def main():
         gr_day = int(str(results.date)[8:11])
         print calendar(gr_day, gr_month, gr_year)
     elif results.string and results.translit:
-        print '\n' + translit_cal(search_saints(results.string))
+        print '\n' + translit_cal(search_constructor(results.string))
     elif results.string:
-        print '\n' + search_saints(results.string)
+        print '\n' + search_constructor(results.string)
     elif results.translit:
         parser.print_help()
 
