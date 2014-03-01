@@ -12,8 +12,11 @@ import textwrap
 from menology import menology
 from holydate_func import ju_to_gr_in_search
 
-def search_saints(search_string):
-    """Search saints in menology."""
+def search_saints(search_string, mode='text'):
+    """Search saints in menology.
+    :param search_string: search input string (e.g. saint name).
+    :param mode: text or html.
+    """
 
     search_string = search_string.decode('utf8')
     d = menology
@@ -52,18 +55,24 @@ def search_saints(search_string):
     #Вывод результата.
     if len(out) == 0:
         return 'Ваш запрос — «{}» не найден!'.decode('utf8').format(search_string)
-    else:
+    elif mode == 'text':
         for item in out:
             string_out += textwrap.fill(str(item[0][0]).lstrip(), initial_indent='  ') \
                 + '  ' + item[0][1] + ' по н. ст.' + '\n' + \
                 textwrap.fill(str(item[1][0]), initial_indent='  ') \
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
                 textwrap.fill(str(item[2][0]).lstrip(),
-                              width=100, initial_indent=' ', subsequent_indent='  ') + '\n\n'
+                              width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
+        return string_out
+    elif mode == 'html':
+        for item in out:
+            string_out += '<p class="search">' + '<span class="datenew">' + str(item[0][0]) + ' ' + item[0][1] + ' по н. ст.' + '</span>' + '</br>'+ '\n' +\
+                          '<span class="dateold">' + str(item[1][0]) + ' ' + item[1][1] + ' по ст. ст.' + '</span>' + '</br>' + '\n' +\
+                          '<span class="saint">' + str(item[2][0]).rstrip() + '\n' + '</span>' + '</p>' + '\n\n'
         return string_out
 
 if __name__ == "__main__":
 
     search_string = raw_input('Input saint name >>> ')
-    print search_saints(search_string)
+    print search_saints(search_string, mode='text')
 
