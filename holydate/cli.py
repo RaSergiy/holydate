@@ -42,7 +42,7 @@ def main():
             textwrap.fill(cal.getBow(), width=110, initial_indent='  ', subsequent_indent='  ') + '\n\n'
         return out
 
-    def search_constructor(string):
+    def search_constructor(string, mode='text'):
         """Construct command-line out."""
 
         result = search_saints(string)
