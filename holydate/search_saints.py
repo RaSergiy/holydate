@@ -68,7 +68,7 @@ def search_saints(search_string, mode='text'):
         for item in out:
             string_out += '<span class="date">' + str(item[0][0]) + ' ' + item[0][1] + ' по н. ст.' + '<br>' + '\n' +\
                           str(item[1][0]) + ' ' + item[1][1] + ' по ст. ст.' + '</span>' + '<br>' + '\n' +\
-                          '<span class="saint">' + str(item[2][0]).rstrip() + '\n' + '</span>' +  + '<br><br>' + '\n\n'
+                          '<span class="saint">' + str(item[2][0]).rstrip() + '\n' + '</span>' + '<br><br>' + '\n\n'
         return string_out
 
 if __name__ == "__main__":
