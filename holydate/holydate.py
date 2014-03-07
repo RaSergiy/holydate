@@ -854,7 +854,7 @@ class AncientCalendar:
         elif self.difference_between_days in range(-49, 0):
             #Friday.
             if self.weekday in [5] and self.bow in [0, 1, 2, 3, 4, 5]:
-                self.bows = 4
+                self.bows = 6
             #Sunday.
             elif self.weekday in [0] and self.bow in [0, 1, 2, 3, 4, 5]:
                 self.bows = 1
