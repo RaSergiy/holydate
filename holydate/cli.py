@@ -46,7 +46,7 @@ def main():
         """Construct command-line out."""
 
         result = search_saints(string)
-        return result.format(red='\033[31m', end='\033[0m', sx='ⵛ', gl='ⵛ', pl='☩', tw='⊕', redgui='').lstrip()
+        return result.format(red='\033[31m', end='\033[0m', sx='ⵛ', gl='ⵛ', pl='☩', tw='⊕', redgui='')
 
 
     def isodate(string):
