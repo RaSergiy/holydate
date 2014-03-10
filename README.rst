@@ -7,7 +7,7 @@ Description
 
 This package represents the ancient Orthodox calendar for 
 oldbelievers (better known as starovery or staroobryadts).
-Containts name of weekday, julian and grigorian
+Containts name of weekday, julian and gregorian
 dates, daily fasts and bows. Holydate contains search saints
 and feasts in menology too.
 
@@ -158,6 +158,8 @@ Holydate as utility with command-line interface:
 
     Pischa skoromnaya.
     Prihodnyie i ishodnyie poklonyi poyasnyie.
+
+Serarch saints and feasts in all year:
 
 ::
 
