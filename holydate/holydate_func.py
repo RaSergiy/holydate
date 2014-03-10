@@ -166,7 +166,38 @@ def gr_to_ju(day, month, year):
     year = 100 * e + f - 4800 + mod(i, 10)
 
     #return julian calendar date:    
-    return day, month, year    
+    return day, month, year
+
+def gr_to_ju_in_search(day, month, year):
+    """
+    Convert Griorian calendar date to Julian
+    calendar date in search module.
+
+    """
+
+    def mod(x, y):
+        return x / y
+
+    a = mod(14 - month, 12)
+    b = year + 4800 - a
+    c = month + 12 * a - 3
+    #calculate JD
+    jd = day + mod(153 * c + 2, 5) + 365 * b + mod(b, 4) - \
+        mod(b, 100) + mod(b, 400) - 32045
+
+    #Calculate julian calendar date from JD.
+    e = 0
+    g = jd + 32082
+    f = mod(4 * g + 3, 1461)
+    j = g - mod(1461 * f, 4)
+    i = mod(5 * j + 2, 153)
+
+    day = j - mod(153 * i + 2, 5) + 1
+    month = i + 3 - 12 * mod(i, 10)
+    year = 100 * e + f - 4800 + mod(i, 10)
+
+    #return julian calendar date:
+    return [day, month, year]
                     
 
 def ju_to_gr_in_search(day, month, year):
