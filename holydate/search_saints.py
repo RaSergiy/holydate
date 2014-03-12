@@ -80,13 +80,13 @@ def search_saints(search_string, mode='text'):
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
                 textwrap.fill(str(item[2][0]).lstrip(),
                               width=100, initial_indent='  ', subsequent_indent='  ') + '\n\n'
-        return string_out
+        return string_out.decode('utf8')
     elif mode == 'html':
         for item in out:
             string_out += '<span class="date">' + str(item[0][0]) + ' ' + item[0][1] + ' по н. ст.' + '<br>' + '\n' +\
                           str(item[1][0]) + ' ' + item[1][1] + ' по ст. ст.' + '</span>' + '<br>' + '\n' +\
                           '<span class="saint">' + str(item[2][0]).rstrip() + '\n' + '</span>' + '<br><br>' + '\n\n'
-        return string_out
+        return string_out.decode('utf8')
 
 
 if __name__ == "__main__":
