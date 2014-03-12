@@ -71,10 +71,10 @@ def search_saints(search_string, mode='text'):
 
     #Вывод результата.
     if len(out) == 0:
-        return 'Ваш запрос — «{}» не найден!'.decode('utf8').format(search_string)
+        return u'Ваш запрос — «{}» не найден!'.format(search_string)
     elif mode == 'text':
         for item in out:
-            string_out += textwrap.fill(str(item[0][0]).lstrip(), initial_indent='  ') \
+            string_out += textwrap.fill(str(item[0][0]), initial_indent='  ') \
                 + '  ' + item[0][1] + ' по н. ст.' + '\n' + \
                 textwrap.fill(str(item[1][0]), initial_indent='  ') \
                 + '  ' + item[1][1] + ' по ст. ст.' + '\n' + \
